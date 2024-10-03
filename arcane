@@ -1,12 +1,1003 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+--Anti Adonis
+for _, v in pairs(getgc(true)) do
+    if pcall(function() return rawget(v, "indexInstance") end) and type(rawget(v, "indexInstance")) == "table" and (rawget(v, "indexInstance"))[1] == "kick" then
+        v.tvk = { "kick", function() return game.Workspace:WaitForChild("") end }
+    end
+end
 
-]]--
+for _, v in next, getgc() do
+    if typeof(v) == "function" and islclosure(v) and not isexecutorclosure(v) then
+        local Constants = debug.getconstants(v)
+        if table.find(Constants, "Detected") and table.find(Constants, "crash") then
+            setthreadidentity(2)
+            hookfunction(v, function()
+                return task.wait(9e9)
+            end)
+            setthreadidentity(7)
+        end
+    end
+end
+--end of Anti Cheat
 
-for v34,v35 in pairs(getgc(true)) do if (pcall(function() return rawget(v35,"indexInstance");end) and (type(rawget(v35,"indexInstance"))=="table") and ((rawget(v35,"indexInstance"))[579 -(386 + 192) ]=="kick")) then v35.tvk={"kick",function() return game.Workspace:WaitForChild("");end};end end for v36,v37 in next,getgc() do if ((typeof(v37)=="function") and islclosure(v37) and  not isexecutorclosure(v37)) then local v115=0;local v116;while true do if (v115==(1262 -(1091 + 171))) then v116=debug.getconstants(v37);if (table.find(v116,"Detected") and table.find(v116,"crash")) then setthreadidentity(1 + 1 );hookfunction(v37,function() return task.wait(10444050100 -1444050612 );end);setthreadidentity(22 -15 );end break;end end end end local v0=game:GetService("Players");local v1=game:GetService("TeleportService");local v2=game:GetService("ReplicatedStorage");local v3=game:GetService("ReplicatedStorage");local v4=v2:WaitForChild("Remotes");local v5=v3:WaitForChild("Remotes"):WaitForChild("Data"):WaitForChild("UpdateHotbar");local v6=getsenv(v0.LocalPlayer.PlayerGui:WaitForChild("Inventory"):WaitForChild("InventoryHandle"));local v7=v6._G.FireServer;local v8=v4.Information.InventoryManage;local v9=v0.LocalPlayer;local v10={};local v11=game:GetService("Players").LocalPlayer;local v12={ToDrop={},DropToggle=false};local function v13() local v38=374 -(123 + 251) ;local v39;local v40;while true do if (v38==(4 -3)) then if v40 then for v219,v220 in ipairs(v40:GetChildren()) do if  not table.find(v39,v220.Name) then table.insert(v39,v220.Name);end end end return v39;end if (v38==(698 -(208 + 490))) then v39={};v40=v9.Backpack:FindFirstChild("Tools");v38=1;end end end if getconnections then for v117,v118 in next,getconnections(game:GetService("Players").LocalPlayer.Idled) do v118:Disable();end end if  not getconnections then game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):ClickButton2(Vector2.new());end);end local v14=loadstring(game:HttpGet("https://raw.githubusercontent.com/UnknowBest/Floppa/main/floppa.lua"))();local v15=v14:MakeWindow({Name="Floppa Hub | Arcane Lineage",HidePremium=false,SaveConfig=false,ConfigFolder="FloppaHubsito"});local v16=v15:MakeTab({Name="Main",Icon="rbxassetid://7733765398",PremiumOnly=false});local v17=v15:MakeTab({Name="Automatic",Icon="rbxassetid://7733765398",PremiumOnly=false});v16:AddButton({Name="Pickup All Plants",Callback=function() local v41=0 + 0 ;local v42;local v43;local v44;while true do if (v41==1) then v44=v11.Character.HumanoidRootPart.CFrame;for v169,v170 in pairs(game:GetService("Workspace").SpawnedItems:GetDescendants()) do if (v170:IsA("Part") and (v170.Name=="ClickPart") and (v170.CFrame~=v42)) then table.insert(v43,v170);end end v41=1 + 1 ;end if (v41==0) then v42=CFrame.new(2301.6144999999997 -(660 + 176) ,6.168369300000002 + 42 , -3372.54272, -(202.406715393 -(14 + 188)),0, -(675.913554907 -(534 + 141)),0,1 + 0 ,0,0.913554907 + 0 ,0, -0.406715393);v43={};v41=1 + 0 ;end if (v41==(3 -1)) then for v171,v172 in ipairs(v43) do v11.Character.HumanoidRootPart.CFrame=v172.CFrame;task.wait(0.35);for v210,v211 in pairs(game:GetService("Workspace").SpawnedItems:GetDescendants()) do if (v211:IsA("ClickDetector") and (v11:DistanceFromCharacter(v211.Parent.Position)<=10)) then fireclickdetector(v211);end end end v11.Character.HumanoidRootPart.CFrame=v44;break;end end end});function serverhop() local v45=game.PlaceId;local v46={};local v47="";local v48=os.date("!*t").hour;local v49=false;function TPReturner() local v104=0 -0 ;local v105;local v106;local v107;while true do if (v104==0) then v105=nil;if (v47=="") then v105=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. v45   .. "/servers/Public?sortOrder=Asc&limit=100" ));else v105=game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"   .. v45   .. "/servers/Public?sortOrder=Asc&limit=100&cursor="   .. v47 ));end v104=2 -1 ;end if (v104==(2 + 0)) then v107=0 + 0 ;for v212,v213 in pairs(v105.data) do local v214=396 -(115 + 281) ;local v215;while true do if (v214==0) then v215=true;v106=tostring(v213.id);v214=2 -1 ;end if ((1 + 0)==v214) then if (tonumber(v213.maxPlayers)>tonumber(v213.playing)) then for v321,v322 in pairs(v46) do local v323=0;while true do if (v323==0) then if (v107~=0) then if (v106==tostring(v322)) then v215=false;end elseif (tonumber(v48)~=tonumber(v322)) then local v362=pcall(function() local v367=0 -0 ;while true do if (0==v367) then v46={};table.insert(v46,v48);break;end end end);end v107=v107 + 1 ;break;end end end if (v215==true) then local v324=0;while true do if (v324==0) then table.insert(v46,v106);wait();v324=3 -2 ;end if (v324==(868 -(550 + 317))) then pcall(function() wait();game:GetService("TeleportService"):TeleportToPlaceInstance(v45,v106,game.Players.LocalPlayer);end);wait(5 -1 );break;end end end end break;end end end break;end if (v104==1) then v106="";if (v105.nextPageCursor and (v105.nextPageCursor~="null") and (v105.nextPageCursor~=nil)) then v47=v105.nextPageCursor;end v104=2 -0 ;end end end function Teleport() while wait() do pcall(function() local v160=0 -0 ;while true do if ((285 -(134 + 151))==v160) then TPReturner();if (v47~="") then TPReturner();end break;end end end);end end Teleport();end v16:AddButton({Name="Server Hop",Default=false,Save=false,Callback=function() serverhop();end});v16:AddButton({Name="Teleport To Merchant",Callback=function() if game:GetService("Workspace").NPCs:FindFirstChild("Mysterious Merchant") then v11.Character.HumanoidRootPart.CFrame=game:GetService("Workspace").NPCs:FindFirstChild("Mysterious Merchant").HumanoidRootPart.CFrame;else v14:MakeNotification({Name="Mysterius Merchant Has Not Spawned",Content="Can't Teleport To Mysterius Merchant, Has Not Appear",Image="rbxassetid://7733765398",Time=1670 -(970 + 695) });end end});local v18=1.6;v16:AddToggle({Name="Enable Sprint Speed",Default=false,Callback=function(v50) local v51=0 -0 ;while true do if (v51==(1990 -(582 + 1408))) then Walkspeeder=v50;while Walkspeeder do task.wait();if Walkspeeder then v11.Character.Effects.RunBuff.Value=v18;end end break;end end end});v16:AddSlider({Name="Change Sprint Speed",Min=3 -2 ,Max=12 -2 ,Default=1,Increment=3 -2 ,ValueName="Walkspeed",Callback=function(v52) local v53=1824 -(1195 + 629) ;while true do if (v53==0) then v18=v52;if Walkspeeder then v11.Character.Effects.RunBuff.Value=v52;end break;end end end});local v19=false;local v20=false;v17:AddToggle({Name="Merchant Notifier",Default=false,Save=true,Flag="MerchantNoti",Callback=function(v54) v19=v54;if v19 then while v19 do task.wait();local v161=game:GetService("Workspace").NPCs:FindFirstChild("Mysterious Merchant");if v161 then v14:MakeNotification({Name="Mysterious Merchant Detected",Content="The Mysterious Merchant Has Appear!",Image="rbxassetid://7733765398",Time=6 -1 });merchnotifier=true;task.wait(251 -(187 + 54) );merchnotifier=false;end end end end});game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Data"):WaitForChild("ClassMasteryData"):FireServer();local v21=v11.PlayerGui;local v22=v21:WaitForChild("ClassMastery");local v23=v22:WaitForChild("Main");local v24=v23:WaitForChild("Points");v17:AddToggle({Name="Check Mastery Tree Points",Default=false,Save=false,Flag="MasteryPoints",Callback=function(v55) local v56=780 -(162 + 618) ;while true do if (v56==(0 + 0)) then MasteryPoints=v55;if MasteryPoints then v14:MakeNotification({Name="Soul Points",Content=v24.Text,Image="rbxassetid://7733765398",Time=10});end break;end end end});v17:AddToggle({Name="Mastery Point Notifier",Default=false,Save=true,Flag="MasteryNotifier",Callback=function(v57) local v58=0 + 0 ;while true do if (v58==0) then getgenv().MasteryNoti=v57;v11.PlayerGui.ClassMastery.Main.Points:GetPropertyChangedSignal("Text"):Connect(function() if MasteryNoti then v14:MakeNotification({Name="You Got Mastery Points ",Image="rbxassetid://7733765398",Time=21 -11 });end end);break;end end end});local v25=v15:MakeTab({Name="Combat",Icon="rbxassetid://7733765398",PremiumOnly=false});local v26=false;function FloppaCollectItems() for v108,v109 in pairs(workspace.Dropped:GetDescendants()) do if (v109.ClassName=="TouchTransmitter") then firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v109.Parent,0 -0 );firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v109.Parent,1 + 0 );end end end v17:AddToggle({Name="Pickup Items Dropped",Flag="Floppa",Callback=function(v59) local v60=1636 -(1373 + 263) ;while true do if (v60==(1000 -(451 + 549))) then v26=v59;if v26 then while v26 do FloppaCollectItems();task.wait();end end break;end end end});v25:AddToggle({Name="AutoDodge",Default=false,Flag="AutoDodge",Callback=function(v61) local v62=0;while true do if (v62==0) then getgenv().AutoDodge=v61;while AutoDodge do local v175=0 + 0 ;local v176;local v177;while true do if (v175==(2 -0)) then task.wait();break;end if (v175==0) then task.wait();v176={[1 -0 ]=true,[1386 -(746 + 638) ]=true};v175=1 + 0 ;end if (v175==(1 -0)) then v177="DodgeMinigame";game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v176,v177);v175=343 -(218 + 123) ;end end end break;end end end});v25:AddToggle({Name="Auto-Minigame Thorian",Default=false,Save=false,Flag="AutOFloppa",Callback=function(v63) local v64=1581 -(1535 + 46) ;while true do if (v64==(0 + 0)) then getgenv().AutOFloppa=v63;while AutoDodge and game:GetService("Workspace").Living[v11.Name]:WaitForChild("FightInProgress")  do task.wait();local v178={[1 + 0 ]=true,[2]=true};local v179="ThorianQTE";game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v178,v179);task.wait();end break;end end end});v25:AddToggle({Name="Insta Auto-QTE",Default=false,Save=false,Flag="AutoQTE",Callback=function(v65) getgenv().AutoQTE=v65;local v67=v9.PlayerGui.StatMenu.Holder.ContentFrame.Stats.Body.RightColumn.Content.BaseClass.Type.Text;while AutoQTE do local v110=560 -(306 + 254) ;while true do if (v110==(0 + 0)) then task.wait();if (v67=="Wizard") then local v223=0 -0 ;local v224;local v225;while true do if (v223==1) then game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v224,v225);v9.PlayerGui.Combat.MagicQTE.Visible=false;break;end if (v223==(1467 -(899 + 568))) then v224=true;v225="MagicQTE";v223=1 + 0 ;end end elseif (v67=="Thief") then local v259=true;local v260="DaggerQTE";game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v259,v260);v9.PlayerGui.Combat.DaggerQTE.Visible=false;elseif (v67=="Slayer") then local v292=true;local v293="SpearQTE";game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v292,v293);v9.PlayerGui.Combat.SpearQTE.Visible=false;elseif (v67=="Martial Artist") then local v325=true;local v326="FistQTE";game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v325,v326);v9.PlayerGui.Combat.FistQTE.Visible=false;elseif (v67=="Warrior") then local v343=true;local v344="SwordQTE";game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(v343,v344);v9.PlayerGui.Combat.SwordQTE.Visible=false;task.wait();end break;end end end end});v25:AddToggle({Name="Legit AutoQTE",Default=false,Save=true,Flag="Value",Callback=function(v68) if  not v68 then return;end _G.Settings=_G.Settings or {} ;local v69=_G.Settings;v69["QTE Timer"]=7 -4 ;local v71=v69["QTE Timer"];local v72=math.clamp(v71,0.2,606 -(268 + 335) );local v73={Wizard="MagicQTE",Thief="DaggerQTE",Slayer="SpearQTE",["Material Artist"]="FistQTE",Warrior="SwordQTE"};local v74=game:GetService("ReplicatedStorage");local v75=game:GetService("Players");local v76=v75.LocalPlayer;local v77=v74:WaitForChild("Remotes");local v78=v77:WaitForChild("Information"):WaitForChild("RemoteEvent");local v79,v80=nil,tick();local function v81() while task.wait() do local v121,v122=pcall(function() return v76.PlayerGui.StatMenu.Holder.ContentFrame.Stats.Body.RightColumn.Content.BaseClass.Type.Text;end);if v121 then return v122;end end end local v79=v81();if ( not v79 or (v79=="None")) then warn("Player has no class!");while task.wait(292 -(60 + 230) ) do local v165=v81();if (v165~="None") then print("Auto dodge setup");v79=v165;break;end end end local v82=v73[v79];local v83=v76.PlayerGui.Combat[v82];v83:GetPropertyChangedSignal("Visible"):Connect(function() local v111=v83.Visible;if v111 then local v166=572 -(426 + 146) ;while true do if ((0 + 0)==v166) then v83.Visible=false;task.wait(v72);v166=1457 -(282 + 1174) ;end if (v166==1) then v78:Fire(true,v82);break;end end end end);v76.CharacterAdded:Connect(function() local v112=v76.PlayerGui:WaitForChild("Combat"):WaitForChild(v82);v112:GetPropertyChangedSignal("Visible"):Connect(function() local v123=811 -(569 + 242) ;local v124;while true do if (v123==(0 -0)) then v124=v112.Visible;if v124 then local v257=0 + 0 ;while true do if (v257==0) then v112.Visible=false;task.wait(v72);v257=1;end if (v257==(1025 -(706 + 318))) then v78:Fire(true,v82);break;end end end break;end end end);end);local v84=v78.Fire;v78.Fire=function(v113,...) v84(v113,true);end;end});local v27=v15:MakeTab({Name="Teleports",Icon="rbxassetid://7733765398",PremiumOnly=false});v27:AddToggle({Name="No Fall-DMG (This will Make you safe for Tp)",Default=true,Save=true,Flag="NoFall",Callback=function(v86) local v87=1251 -(721 + 530) ;local v88;while true do if (v87==1) then v88=hookmetamethod(game,"__namecall",function(v180,...) local v181={...};if ((v180.Name=="EnviroEffects") and getgenv().NoFall) then return;end return v88(v180,...);end);break;end if (v87==0) then getgenv().NoFall=v86;v88=nil;v87=2 -1 ;end end end});v27:AddDropdown({Name="Spawns/Zones",Default="",Options={"Level Up Room","Caldera","Ruins/Sand Town","Volcano (Dragon Door)","Thorian Door","Way of Life (Covenant)","Blades Of World (Covenant)","Fractured Realm","Tundra Door"},Callback=function(v89) if (v89=="Caldera") then local v125=Vector3.new( -(1392.396332 -(418 + 753)),46.5463257, -3328.51367);local v126=0;local v127=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v126),{CFrame=CFrame.new(v125)});v127:Play();elseif (v89=="Ruins/Sand Town") then local v182=0 + 0 ;local v183;local v184;local v185;while true do if (v182==(1 + 0)) then v185=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v184),{CFrame=CFrame.new(v183)});v185:Play();break;end if (v182==(0 + 0)) then v183=Vector3.new( -2405.2,11.799999999999997 + 31 , -(3506.7 -(406 + 123)));v184=0;v182=1;end end elseif (v89=="Way of Life (Covenant)") then local v227=1769 -(1749 + 20) ;local v228;local v229;local v230;while true do if (v227==(1 + 0)) then v230=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v229),{CFrame=CFrame.new(v228)});v230:Play();break;end if (v227==0) then v228=Vector3.new(3934.2 -(1249 + 73) ,354, -(1175 + 2118));v229=0;v227=1;end end elseif (v89=="Blades Of World (Covenant)") then local v262=Vector3.new( -(3975.5 -(466 + 679)), -(84.4 -49), -(6057.4 -3939));local v263=0;local v264=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v263),{CFrame=CFrame.new(v262)});v264:Play();elseif (v89=="Fractured Realm") then local v296=1900 -(106 + 1794) ;local v297;local v298;local v299;while true do if (v296==(0 + 0)) then v297=Vector3.new(41.5 + 119 ,684.1 -452 ,3227 -2035 );v298=114 -(4 + 110) ;v296=585 -(57 + 527) ;end if (v296==(1428 -(41 + 1386))) then v299=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v298),{CFrame=CFrame.new(v297)});v299:Play();break;end end elseif (v89=="Volcano (Dragon Door)") then local v328=103 -(17 + 86) ;local v329;local v330;local v331;while true do if (v328==(1 + 0)) then v331=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v330),{CFrame=CFrame.new(v329)});v331:Play();break;end if (v328==0) then v329=Vector3.new( -(10633 -5865),51, -(9915 -6491));v330=0;v328=167 -(122 + 44) ;end end elseif (v89=="Tundra Door") then local v346=0;local v347;local v348;local v349;while true do if (v346==(0 -0)) then v347=Vector3.new( -(56 -39),239 + 54 , -5999);v348=0;v346=1 + 0 ;end if (v346==(1 -0)) then v349=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v348),{CFrame=CFrame.new(v347)});v349:Play();break;end end elseif (v89=="Level Up Room") then local v354=65 -(30 + 35) ;local v355;local v356;local v357;while true do if (v354==(1 + 0)) then v357=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v356),{CFrame=CFrame.new(v355)});v357:Play();break;end if (v354==0) then v355=Vector3.new(789,235,3378 -(1043 + 214) );v356=0;v354=3 -2 ;end end elseif (v89=="Thorian Door") then local v363=1212 -(323 + 889) ;local v364;local v365;local v366;while true do if ((0 -0)==v363) then v364=Vector3.new(2815 -(361 + 219) ,24, -373);v365=320 -(53 + 267) ;v363=1 + 0 ;end if (v363==(414 -(15 + 398))) then v366=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v365),{CFrame=CFrame.new(v364)});v366:Play();break;end end end end});v27:AddDropdown({Name="Misc",Default="",Options={"Floppa (Thanasius)","BlackSmith","Mark Npc","Sería(alchemist)","Merchant(Item Seller)","Atalar(Shard Fusioner)","Doctor(westwood)","The SoulMaster","Floppa Doctor"},Callback=function(v90) if (v90=="BlackSmith") then local v128=0 + 0 ;local v129;local v130;local v131;while true do if (v128==(738 -(542 + 196))) then v129=Vector3.new(5644.7 -3011 ,113.39999999999998 + 273 , -(1874 + 1813));v130=0 + 0 ;v128=1;end if (v128==1) then v131=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v130),{CFrame=CFrame.new(v129)});v131:Play();break;end end elseif (v90=="Mark Npc") then local v186=0 -0 ;local v187;local v188;local v189;while true do if (v186==(2 -1)) then v189=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v188),{CFrame=CFrame.new(v187)});v189:Play();break;end if (v186==0) then v187=Vector3.new( -67.9,1593.9 -(1126 + 425) , -3280.7);v188=0;v186=406 -(118 + 287) ;end end elseif (v90=="Sería(alchemist)") then local v231=Vector3.new(10131.1 -7546 ,386.3, -(5148 -(118 + 1003)));local v232=0 -0 ;local v233=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v232),{CFrame=CFrame.new(v231)});v233:Play();elseif (v90=="Merchant(Item Seller)") then local v265=0;local v266;local v267;local v268;while true do if (v265==1) then v268=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v267),{CFrame=CFrame.new(v266)});v268:Play();break;end if (v265==(377 -(142 + 235))) then v266=Vector3.new( -147.9,194.5 -151 , -3449);v267=0;v265=1 + 0 ;end end elseif (v90=="Atalar(Shard Fusioner) ") then local v300=977 -(553 + 424) ;local v301;local v302;local v303;while true do if (v300==(1 -0)) then v303=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v302),{CFrame=CFrame.new(v301)});v303:Play();break;end if (v300==(0 + 0)) then v301=Vector3.new( -(365 + 2),26 + 18 , -(1439 + 1946));v302=0 + 0 ;v300=1;end end elseif (v90=="Doctor(westwood)") then local v332=Vector3.new(2518.4,836.3 -450 , -(10100 -6475));local v333=0 -0 ;local v334=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v333),{CFrame=CFrame.new(v332)});v334:Play();elseif (v90=="Floppa Doctor") then local v350=0 + 0 ;local v351;local v352;local v353;while true do if (v350==0) then v351=Vector3.new( -(8882.1 -7044),800.5 -(239 + 514) , -3187.6);v352=0 + 0 ;v350=1330 -(797 + 532) ;end if (v350==(1 + 0)) then v353=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v352),{CFrame=CFrame.new(v351)});v353:Play();break;end end elseif (v90=="Floppa (Thanasius)") then local v358=0 + 0 ;local v359;local v360;local v361;while true do if (v358==(2 -1)) then v361=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v360),{CFrame=CFrame.new(v359)});v361:Play();break;end if ((1202 -(373 + 829))==v358) then v359=Vector3.new(1695,12, -(2385 -(476 + 255)));v360=1130 -(369 + 761) ;v358=1 + 0 ;end end end end});v27:AddDropdown({Name="Enchants",Default="",Options={"Inferno Enchant Trigger","Inferno Enchant End","Reaper Enchant","Midas Enchant","Lifesong Enchant","Cursed Enchant"},Callback=function(v91) if (v91=="Inferno Enchant Trigger") then local v132=0 + 0 ;local v133;local v134;local v135;while true do if (v132==0) then v133=Vector3.new( -(6432 -2088),410 -(144 + 192) , -(2306 -(42 + 174)));v134=0 + 0 ;v132=1 + 0 ;end if (1==v132) then v135=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v134),{CFrame=CFrame.new(v133)});v135:Play();break;end end elseif (v91=="Inferno Enchant End") then local v190=Vector3.new( -4340,29 + 38 , -1587);local v191=0;local v192=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v191),{CFrame=CFrame.new(v190)});v192:Play();elseif (v91=="Reaper Enchant") then local v234=1504 -(363 + 1141) ;local v235;local v236;local v237;while true do if (v234==0) then v235=Vector3.new( -2402,1627 -(1183 + 397) , -(11318 -7600));v236=0;v234=1 + 0 ;end if (v234==1) then v237=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v236),{CFrame=CFrame.new(v235)});v237:Play();break;end end elseif (v91=="Midas Enchant") then local v269=Vector3.new( -(220 + 73),2019 -(1913 + 62) , -(2001 + 1175));local v270=0 -0 ;local v271=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v270),{CFrame=CFrame.new(v269)});v271:Play();elseif (v91=="Cursed Enchant") then local v304=Vector3.new(1651,54, -(5413 -(565 + 1368)));local v305=0 -0 ;local v306=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v305),{CFrame=CFrame.new(v304)});v306:Play();elseif (v91=="Lifesong Enchant") then local v335=Vector3.new(7649 -(1477 + 184) ,71 -18 , -(3231 + 236));local v336=0;local v337=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v336),{CFrame=CFrame.new(v335)});v337:Play();end end});v27:AddDropdown({Name="Base Class Trainer",Default="",Options={"Ysa(Warrior)","Tivek (Spear)","Boots(Thief)","Arandor(Wizzard)","Doran(Martial Artist)"},Callback=function(v92) if (v92=="Doran(Martial Artist)") then local v136=476 -(41 + 435) ;local v137;local v138;local v139;while true do if (v136==(1001 -(938 + 63))) then v137=Vector3.new(372 + 111 ,1242 -(936 + 189) , -2653);v138=0;v136=1 + 0 ;end if (v136==1) then v139=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v138),{CFrame=CFrame.new(v137)});v139:Play();break;end end elseif (v92=="Arandor(Wizzard)") then local v193=0;local v194;local v195;local v196;while true do if (v193==1) then v196=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v195),{CFrame=CFrame.new(v194)});v196:Play();break;end if (v193==0) then v194=Vector3.new(2206.8 -(1565 + 48) ,124.1, -(2229 + 1379));v195=0;v193=1139 -(782 + 356) ;end end elseif (v92=="Tivek (Spear)") then local v238=267 -(176 + 91) ;local v239;local v240;local v241;while true do if (v238==0) then v239=Vector3.new(657.7,252.2 -155 , -3984.5);v240=0 -0 ;v238=1093 -(975 + 117) ;end if ((1876 -(157 + 1718))==v238) then v241=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v240),{CFrame=CFrame.new(v239)});v241:Play();break;end end elseif (v92=="Ysa(Warrior)") then local v272=Vector3.new( -(384.4 + 88),148.9 -106 , -3283.1);local v273=0 -0 ;local v274=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v273),{CFrame=CFrame.new(v272)});v274:Play();elseif (v92=="Boots(Thief)") then local v307=1018 -(697 + 321) ;local v308;local v309;local v310;while true do if (v307==1) then v310=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v309),{CFrame=CFrame.new(v308)});v310:Play();break;end if (v307==(0 -0)) then v308=Vector3.new( -(895.1 -472),96.9 -54 , -3529.1);v309=0 + 0 ;v307=1 -0 ;end end end end});v27:AddDropdown({Name="Super Class Trainer (Chaotic)",Default="",Options={"DarkFist Trainer","Berserker Trainer","Ulys(Necromancer)","Orín(Impaler)","Inette(Assasin)"},Callback=function(v93) if (v93=="DarkFist Trainer") then local v140=872 -(826 + 46) ;local v141;local v142;local v143;while true do if (1==v140) then v143=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v142),{CFrame=CFrame.new(v141)});v143:Play();break;end if (v140==(947 -(245 + 702))) then v141=Vector3.new(6177.6 -4222 ,11.299999999999997 + 21 , -(3318 -(260 + 1638)));v142=0;v140=441 -(382 + 58) ;end end elseif (v93=="Berserker Trainer") then local v197=Vector3.new(5349.8, -(291.3 -200), -3255.6);local v198=0;local v199=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v198),{CFrame=CFrame.new(v197)});v199:Play();elseif (v93=="Ulys(Necromancer)") then local v242=0 + 0 ;local v243;local v244;local v245;while true do if (v242==(0 -0)) then v243=Vector3.new(17687.9 -11737 ,1258.8 -(902 + 303) , -2858);v244=0;v242=1 -0 ;end if (v242==(2 -1)) then v245=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v244),{CFrame=CFrame.new(v243)});v245:Play();break;end end elseif (v93=="Orín(Impaler)") then local v275=Vector3.new(2319.5,385.7, -(312 + 3310));local v276=1690 -(1121 + 569) ;local v277=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v276),{CFrame=CFrame.new(v275)});v277:Play();elseif (v93=="Inette(Assasin)") then local v311=Vector3.new(1395.3 -(22 + 192) , -(690.5 -(483 + 200)), -2311.1);local v312=1463 -(1404 + 59) ;local v313=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v312),{CFrame=CFrame.new(v311)});v313:Play();end end});v27:AddDropdown({Name="Super Class Trainer (Oderly)",Default="",Options={"Paladin Trainer","Luther(Monk)","Fernain(Saint)","Landrum(Elementalist)","Orkin(Ranger)"},Callback=function(v94) if (v94=="Paladin Trainer") then local v144=0 -0 ;local v145;local v146;local v147;while true do if (v144==1) then v147=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v146),{CFrame=CFrame.new(v145)});v147:Play();break;end if (v144==0) then v145=Vector3.new( -2515.8,77.1 -34 , -(840.1999999999998 + 2118));v146=0;v144=237 -(141 + 95) ;end end elseif (v94=="Luther(Monk)") then local v200=Vector3.new( -(1664.2 + 29),292.9 -178 , -2942.3);local v201=0 -0 ;local v202=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v201),{CFrame=CFrame.new(v200)});v202:Play();elseif (v94=="Fernain(Saint)") then local v246=0 + 0 ;local v247;local v248;local v249;while true do if (v246==(2 -1)) then v249=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v248),{CFrame=CFrame.new(v247)});v249:Play();break;end if (v246==(0 + 0)) then v247=Vector3.new( -(1387.9 + 1276),169.9 -48 , -(2025 + 1407));v248=163 -(92 + 71) ;v246=1 + 0 ;end end elseif (v94=="Landrum(Elementalist)") then local v278=Vector3.new( -2572.7,69.7 -27 , -(3250.6 -(574 + 191)));local v279=0 + 0 ;local v280=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v279),{CFrame=CFrame.new(v278)});v280:Play();elseif (v94=="Orkin(Ranger)") then local v314=0 -0 ;local v315;local v316;local v317;while true do if (v314==1) then v317=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v316),{CFrame=CFrame.new(v315)});v317:Play();break;end if (v314==0) then v315=Vector3.new(2588.2,386.3, -(1622.8000000000002 + 1553));v316=849 -(254 + 595) ;v314=127 -(55 + 71) ;end end elseif (v94=="Thorin(Beastmaster)") then local v338=0 -0 ;local v339;local v340;local v341;while true do if (v338==(1791 -(573 + 1217))) then v341=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v340),{CFrame=CFrame.new(v339)});v341:Play();break;end if (v338==(0 -0)) then v339=Vector3.new( -814.2,61.9, -(189.19999999999982 + 2284));v340=0;v338=1;end end end end});v27:AddDropdown({Name="Super Class Trainer (Neutral)",Default="",Options={"Gren(Brawler)","Aberon(Rogue)","Relan(Lancer)","Leoran(Blade dancer)","Ophelia(Hexer)"},Callback=function(v95) if (v95=="Gren(Brawler)") then local v148=0 + 0 ;local v149;local v150;local v151;while true do if (v148==0) then v149=Vector3.new(339.3 -104 ,904.6 -(118 + 688) , -(4700.1 -(25 + 23)));v150=0;v148=1;end if (v148==(1 + 0)) then v151=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v150),{CFrame=CFrame.new(v149)});v151:Play();break;end end elseif (v95=="Relan(Lancer)") then local v203=Vector3.new( -58.9,2045.1 -(927 + 959) , -(18893.8 -13288));local v204=0;local v205=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v204),{CFrame=CFrame.new(v203)});v205:Play();elseif (v95=="Aberon(Rogue)") then local v250=732 -(16 + 716) ;local v251;local v252;local v253;while true do if (v250==(0 -0)) then v251=Vector3.new( -(2602.9 -(11 + 86)),43.6, -(6980.3 -4118));v252=285 -(175 + 110) ;v250=2 -1 ;end if (v250==(4 -3)) then v253=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v252),{CFrame=CFrame.new(v251)});v253:Play();break;end end elseif (v95=="Leoran(Blade dancer)") then local v281=1796 -(503 + 1293) ;local v282;local v283;local v284;while true do if ((2 -1)==v281) then v284=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v283),{CFrame=CFrame.new(v282)});v284:Play();break;end if (v281==0) then v282=Vector3.new(45.6 + 16 ,1174.5 -(810 + 251) , -5364.3);v283=0 + 0 ;v281=1 + 0 ;end end elseif (v95=="Ophelia(Hexer)") then local v318=Vector3.new( -(594.9 + 64),575.7 -(43 + 490) , -(4929.1 -(711 + 22)));local v319=0;local v320=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v319),{CFrame=CFrame.new(v318)});v320:Play();end end});v27:AddDropdown({Name="Mark Portals",Default="",Options={"Venia Orb 1","Venia Orb 2","Venia Orb 3","Venia Orb 4"},Callback=function(v96) if (v96=="Venia Orb 1") then local v152=0;local v153;local v154;local v155;while true do if (v152==(1 -0)) then v155=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v154),{CFrame=CFrame.new(v153)});v155:Play();break;end if (v152==(0 + 0)) then v153=Vector3.new( -(4918 -(1344 + 400)), -(450 -(255 + 150)), -2428);v154=0 + 0 ;v152=1 + 0 ;end end elseif (v96=="Venia Orb 2") then local v206=Vector3.new(1709,149 -114 , -(9124 -6299));local v207=1739 -(404 + 1335) ;local v208=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v207),{CFrame=CFrame.new(v206)});v208:Play();elseif (v96=="Venia Orb 3") then local v254=Vector3.new(869 -(183 + 223) ,138, -2683);local v255=0;local v256=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v255),{CFrame=CFrame.new(v254)});v256:Play();elseif (v96=="Venia Orb 4") then local v285=Vector3.new( -(55 -9),195 + 98 , -(2140 + 3804));local v286=337 -(10 + 327) ;local v287=game:GetService("TweenService"):Create(v11.Character.HumanoidRootPart,TweenInfo.new(v286),{CFrame=CFrame.new(v285)});v287:Play();end end});local v28=v15:MakeTab({Name="Dupe",Icon="rbxassetid://7733765398",PremiumOnly=false});local v29=false;local v5=v3:WaitForChild("Remotes"):WaitForChild("Data"):WaitForChild("UpdateHotbar");v28:AddToggle({Name="Enable Rollback",Default=false,Callback=function(v97) local v98=0 + 0 ;while true do if (v98==(338 -(118 + 220))) then v29=v97;if v29 then coroutine.wrap(function() while v29 do local v258=0 + 0 ;while true do if (v258==(450 -(108 + 341))) then v7(v5,{[2]="\255"});print("Rollback Setup");break;end if (v258==(0 + 0)) then task.wait();v7(v5,{[255]="\255"});v258=1;end end end end)();end break;end end end});local v30=v28:AddDropdown({Name="Items To Drop",Default="",Options=v13(),Callback=function(v99) if v12.ToDrop[v99] then v12.ToDrop[v99]=nil;else v12.ToDrop[v99]=v99;end end});local v31=v28:AddButton({Name="Refresh",Callback=function() v30:Refresh(v13(),v30.Value);end});local v32="";v28:AddToggle({Name="Drop Item",Default=false,Callback=function(v100) local v101=0;while true do if (v101==(0 -0)) then v12['DropToggle']=v100;if v12['DropToggle'] then local v218=1493 -(711 + 782) ;while true do if (0==v218) then v32=v30.Value;coroutine.wrap(function() while v12['DropToggle'] do task.wait();if (v32~=v30.Value) then v32=v30.Value;end if (v32~="") then v8:FireServer("Drop",v32);end end end)();break;end end end break;end end end});v28:AddButton({Name="Rejoin",Callback=function() game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game:GetService("Players").LocalPlayer);end});local v26=false;v28:AddToggle({Name="Drop All Inventory",Flag="Floppa",Callback=function(v102) local v103=0;while true do if (v103==0) then v26=v102;while v26 do local v209=0 -0 ;while true do if ((469 -(270 + 199))==v209) then task.wait();for v289,v290 in ipairs(v13()) do v8:FireServer("Drop",v290);end break;end end end break;end end end});v14:Init();local v33=v15:MakeTab({Name="Credits",Icon="rbxassetid://7733765398",PremiumOnly=false});v33:AddParagraph("Floppa | xalix2267","Owner of The Script and Developer");v33:AddParagraph("Mz | Mz#4822","Contributor and Developer of The Script");v33:AddParagraph("Unknow | IamNotUnknow#1003","Developer of The Script");v33:AddParagraph("Geo | Elgeo#2223","Tester of The Script");v33:AddParagraph("OneFool","Ui Modified");v33:AddParagraph("You","For Using my Script ❤");v14:Init();
+-- locals
+local players = game:GetService("Players")
+local teleportService = game:GetService("TeleportService")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remotes = replicatedStorage:WaitForChild("Remotes")
+local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Data"):WaitForChild("UpdateHotbar")
+local senv = getsenv(players.LocalPlayer.PlayerGui:WaitForChild("Inventory"):WaitForChild("InventoryHandle"))
+local FireServer = senv._G.FireServer
+local inventoryRemote = remotes.Information.InventoryManage
+local localPlayer = players.LocalPlayer
+local Moves = {}
+local lp = game:GetService("Players").LocalPlayer
+local variables = {
+    ToDrop = {},
+    DropToggle = false,
+}
+-- fuctions
+
+
+local function GetUniqueToolNames()
+    local uniqueToolNames = {}
+    local toolsFolder = localPlayer.Backpack:FindFirstChild("Tools")
+    if toolsFolder then
+        for _, tool in ipairs(toolsFolder:GetChildren()) do
+            if not table.find(uniqueToolNames, tool.Name) then
+                table.insert(uniqueToolNames, tool.Name)
+            end
+        end
+    end
+    return uniqueToolNames
+end
+-- moves
+
+-- Anti Afk
+if getconnections then
+    for _, v in next, getconnections(game:GetService("Players").LocalPlayer.Idled) do
+        v:Disable()
+    end
+end
+
+if not getconnections then
+    game:GetService("Players").LocalPlayer.Idled:connect(
+        function()
+            game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+        end
+    )
+end
+--end
+
+--main script
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/UnknowBest/Floppa/main/floppa.lua')))()
+local Window = OrionLib:MakeWindow({
+    Name = "Floppa Hub | Arcane Lineage",
+    HidePremium = false,
+    SaveConfig = false,
+    ConfigFolder = "FloppaHubsito"
+})
+local Main = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+local Automation = Window:MakeTab({
+    Name = "Automatic",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+
+Main:AddButton({
+    Name = "Pickup All Plants",
+    Callback = function()
+        local avoidCFrame = CFrame.new(1465.6145, 48.1683693, -3372.54272, -0.406715393, 0, -0.913554907, 0, 1, 0,
+            0.913554907, 0, -0.406715393)
+        local trinkets = {}
+        local originalLocation = lp.Character.HumanoidRootPart.CFrame
+
+        for _, Trinket in pairs(game:GetService("Workspace").SpawnedItems:GetDescendants()) do
+            if Trinket:IsA("Part") and Trinket.Name == "ClickPart" and Trinket.CFrame ~= avoidCFrame then
+                table.insert(trinkets, Trinket)
+            end
+        end
+
+        for _, Trinket in ipairs(trinkets) do
+            lp.Character.HumanoidRootPart.CFrame = Trinket.CFrame
+            task.wait(0.35)
+            for _, v in pairs(game:GetService("Workspace").SpawnedItems:GetDescendants()) do
+                if v:IsA("ClickDetector") and lp:DistanceFromCharacter(v.Parent.Position) <= 10 then
+                    fireclickdetector(v)
+                end
+            end
+        end
+        lp.Character.HumanoidRootPart.CFrame = originalLocation
+    end
+})
+function serverhop()
+    local PlaceID = game.PlaceId
+    local AllIDs = {}
+    local foundAnything = ""
+    local actualHour = os.date("!*t").hour
+    local Deleted = false
+
+    function TPReturner()
+        local Site;
+        if foundAnything == "" then
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+        else
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+        end
+        local ID = ""
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        end
+        local num = 0;
+        for i,v in pairs(Site.data) do
+            local Possible = true
+            ID = tostring(v.id)
+            if tonumber(v.maxPlayers) > tonumber(v.playing) then
+                for _,Existing in pairs(AllIDs) do
+                    if num ~= 0 then
+                        if ID == tostring(Existing) then
+                            Possible = false
+                        end
+                    else
+                        if tonumber(actualHour) ~= tonumber(Existing) then
+                            local delFile = pcall(function()
+                                -- delfile("NotSameServers.json")
+                                AllIDs = {}
+                                table.insert(AllIDs, actualHour)
+                            end)
+                        end
+                    end
+                    num = num + 1
+                end
+                if Possible == true then
+                    table.insert(AllIDs, ID)
+                    wait()
+                    pcall(function()
+                        -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                        wait()
+                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    end)
+                    wait(4)
+                end
+            end
+        end
+    end
+
+    function Teleport()
+        while wait() do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~= "" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+
+    Teleport()
+end
+Main:AddButton({
+    Name = "Server Hop",
+    Default = false,
+    Save = false,
+Callback = function()
+    serverhop()
+end
+})
+Main:AddButton({
+    Name = "Teleport To Merchant",
+    Callback = function()
+        if game:GetService("Workspace").NPCs:FindFirstChild("Mysterious Merchant") then
+            lp.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").NPCs:FindFirstChild(
+                "Mysterious Merchant").HumanoidRootPart.CFrame
+        else
+            OrionLib:MakeNotification({
+                Name = "Mysterius Merchant Has Not Spawned",
+                Content = "Can't Teleport To Mysterius Merchant, Has Not Appear",
+                Image = "rbxassetid://7733765398",
+                Time = 5
+            })
+        end
+    end
+})
+local Walk = 1.6
+Main:AddToggle({
+    Name = "Enable Sprint Speed",
+    Default = false,
+    Callback = function(Value)
+        Walkspeeder = Value
+        while Walkspeeder do
+            task.wait()
+            if Walkspeeder then
+                lp.Character.Effects.RunBuff.Value = Walk
+            end
+        end
+    end
+})
+
+Main:AddSlider({
+    Name = "Change Sprint Speed",
+    Min = 1,
+    Max = 10,
+    Default = 1,
+    Increment = 1,
+    ValueName = "Walkspeed",
+    Callback = function(Value)
+        Walk = Value
+        if Walkspeeder then
+            lp.Character.Effects.RunBuff.Value = Value
+        end
+    end
+})
+
+local merchNotiEnabled = false
+local merchNotifier = false
+Automation:AddToggle({
+    Name = "Merchant Notifier",
+    Default = false,
+    Save = true,
+    Flag = "MerchantNoti",
+    Callback = function(value)
+        merchNotiEnabled = value
+        if merchNotiEnabled then
+            while merchNotiEnabled do
+                task.wait()
+                local merchant = game:GetService("Workspace").NPCs:FindFirstChild("Mysterious Merchant")
+                if merchant then
+                    OrionLib:MakeNotification({
+                        Name = "Mysterious Merchant Detected",
+                        Content = "The Mysterious Merchant Has Appear!",
+                        Image = "rbxassetid://7733765398",
+                        Time = 5
+                    })
+                    merchnotifier = true
+                    task.wait(10)
+                    merchnotifier = false
+                end
+            end
+        end
+    end
+})
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Data"):WaitForChild("ClassMasteryData"):FireServer()
+local playerGui = lp.PlayerGui
+local classMastery = playerGui:WaitForChild("ClassMastery")
+local main = classMastery:WaitForChild("Main")
+local points = main:WaitForChild("Points")
+Automation:AddToggle({
+    Name = "Check Mastery Tree Points",
+    Default = false,
+    Save = false,
+    Flag = "MasteryPoints",
+    Callback = function(value)
+        MasteryPoints = value
+        if MasteryPoints then
+            OrionLib:MakeNotification({
+                Name = "Soul Points",
+                Content = points.Text,
+                Image = "rbxassetid://7733765398",
+                Time = 10
+            })
+        end
+    end
+})
+Automation:AddToggle({
+    Name = "Mastery Point Notifier",
+    Default = false,
+    Save = true,
+    Flag = "MasteryNotifier",
+    Callback = function(Value)
+        getgenv().MasteryNoti = Value
+
+        lp.PlayerGui.ClassMastery.Main.Points:GetPropertyChangedSignal("Text"):Connect(function()
+            if MasteryNoti then
+                OrionLib:MakeNotification({
+                    Name = "You Got Mastery Points ",
+                    Image = "rbxassetid://7733765398",
+                    Time = 10
+                })
+            end
+        end)
+    end
+})
+local Combat = Window:MakeTab({
+    Name = "Combat",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+
+local Floppa = false
+
+function FloppaCollectItems()
+    for _,v in pairs(workspace.Dropped:GetDescendants()) do
+        if v.ClassName == "TouchTransmitter" then
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) 
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) 
+        end
+    end
+end
+Automation:AddToggle({
+    Name = "Pickup Items Dropped",
+    Flag = "Floppa",
+    Callback = function(Value)
+        Floppa = Value
+        if Floppa then
+            while Floppa do
+                FloppaCollectItems()
+                task.wait()
+            end
+        end
+    end
+})
+-- AutoDoch
+Combat:AddToggle({
+    Name = "AutoDodge",
+    Default = false,
+    Flag = "AutoDodge",
+    Callback = function(Value)
+        getgenv().AutoDodge = (Value)
+        while AutoDodge do
+            task.wait()
+            local Floppa1 = {
+                [1] = true,
+                [2] = true
+            }
+            local Floppa2 = "DodgeMinigame"
+            game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2)
+            task.wait()
+        end
+    end
+})
+Combat:AddToggle({
+ Name = "Auto-Minigame Thorian", 
+Default = false,
+ Save = false,
+  Flag = "AutOFloppa",
+   Callback = function(Value) 
+    getgenv().AutOFloppa = (Value) 
+    while AutoDodge and game:GetService("Workspace").Living[lp.Name]:WaitForChild("FightInProgress") 
+    do task.wait() 
+        local Floppa1 = { 
+        [1] = true, 
+        [2] = true }
+         local Floppa2 = "ThorianQTE"
+ game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2) task.wait()
+        end
+    end
+ })
+Combat:AddToggle({
+    Name = "Insta Auto-QTE",
+    Default = false,
+    Save = false,
+    Flag = "AutoQTE",
+    Callback = function(Value)
+        getgenv().AutoQTE = (Value)
+        local BaseClass = localPlayer.PlayerGui.StatMenu.Holder.ContentFrame.Stats.Body.RightColumn.Content.BaseClass.Type.Text
+        while AutoQTE do
+            task.wait()
+            if BaseClass == "Wizard" then
+                local Floppa1 = true
+                local Floppa2 = "MagicQTE"
+                game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2)
+                localPlayer.PlayerGui.Combat.MagicQTE.Visible = false
+            elseif BaseClass == "Thief" then
+                local Floppa1 = true
+                local Floppa2 = "DaggerQTE"
+                game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2)
+                localPlayer.PlayerGui.Combat.DaggerQTE.Visible = false
+                -- Slayer
+            elseif BaseClass == "Slayer" then
+                local Floppa1 = true
+                local Floppa2 = "SpearQTE"
+                game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2)
+                localPlayer.PlayerGui.Combat.SpearQTE.Visible = false
+                -- Fist
+            elseif BaseClass == "Martial Artist" then
+                local Floppa1 = true
+                local Floppa2 = "FistQTE"
+                game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2)
+                localPlayer.PlayerGui.Combat.FistQTE.Visible = false
+                -- Sword
+            elseif BaseClass == "Warrior" then
+                local Floppa1 = true
+                local Floppa2 = "SwordQTE"
+                game:GetService("ReplicatedStorage").Remotes.Information.RemoteFunction:FireServer(Floppa1, Floppa2)
+                localPlayer.PlayerGui.Combat.SwordQTE.Visible = false
+                task.wait()
+            end
+        end
+    end
+})
+
+Combat:AddToggle({
+    Name = "Legit AutoQTE",
+    Default = false,
+    Save = true,
+    Flag = "Value",
+    Callback = function(Value)
+        if not Value then return end
+
+        _G.Settings = _G.Settings or {}
+        local settings = _G.Settings
+        settings["QTE Timer"] = 3
+        local _timer = settings["QTE Timer"]
+        local legitTimer = math.clamp(_timer, 0.2, 3)
+        local baseToString = {
+            ["Wizard"] = "MagicQTE",
+            ["Thief"] = "DaggerQTE",
+            ["Slayer"] = "SpearQTE",
+            ["Material Artist"] = "FistQTE",
+            ["Warrior"] = "SwordQTE"
+        }
+        local replicatedStorage = game:GetService("ReplicatedStorage")
+        local players = game:GetService("Players")
+        local player = players.LocalPlayer
+
+        local remotes = replicatedStorage:WaitForChild("Remotes")
+        local actionRemote = remotes:WaitForChild("Information"):WaitForChild("RemoteEvent")
+
+        local playerClass, breakTimer = nil, tick()
+
+        local function getClass()
+            while task.wait() do
+                local result, class = pcall(function()
+                    return player.PlayerGui.StatMenu.Holder.ContentFrame.Stats.Body.RightColumn.Content.BaseClass.Type.Text
+                end)
+                if result then
+                    return class
+                end
+            end
+        end
+        local playerClass = getClass()
+
+        if not playerClass or playerClass == "None" then
+            warn("Player has no class!")
+
+            while task.wait(2) do
+                local class = getClass()
+
+                if class ~= "None" then
+                    print("Auto dodge setup")
+                    playerClass = class
+                    break
+                end
+            end
+        end
+
+        local classTranslation = baseToString[playerClass]
+        local classUi = player.PlayerGui.Combat[classTranslation]
+
+        classUi:GetPropertyChangedSignal("Visible"):Connect(function()
+            local newValue = classUi.Visible
+            if newValue then
+                classUi.Visible = false
+                task.wait(legitTimer)
+                actionRemote:Fire(true, classTranslation)
+            end
+        end)
+        player.CharacterAdded:Connect(function()
+            local newClassUi = player.PlayerGui:WaitForChild("Combat"):WaitForChild(classTranslation)
+            newClassUi:GetPropertyChangedSignal("Visible"):Connect(function()
+                local newValue = newClassUi.Visible
+                if newValue then
+                    newClassUi.Visible = false
+                    task.wait(legitTimer)
+                    actionRemote:Fire(true, classTranslation) 
+                end
+            end)
+        end)
+       local oldFire = actionRemote.Fire
+        actionRemote.Fire = function(self,...)
+            oldFire(self,true)
+        end
+    end
+}) 
+-- Teleports
+local Telepor = Window:MakeTab({
+    Name = "Teleports",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+Telepor:AddToggle({
+    Name = "No Fall-DMG (This will Make you safe for Tp)",
+    Default = true,
+    Save = true,
+    Flag = "NoFall",
+    Callback = function(Value)
+        getgenv().NoFall = (Value)
+
+        local OldNameCall = nil
+        OldNameCall = hookmetamethod(game, "__namecall", function(self,...)
+            local Arg = {... }
+            if self.Name == "EnviroEffects" and getgenv().NoFall then
+                return
+            end
+            return OldNameCall(self,...)
+        end)
+    end
+})
+Telepor:AddDropdown({
+    Name = "Spawns/Zones",
+    Default = "",
+    Options = {"Level Up Room", "Caldera", "Ruins/Sand Town","Volcano (Dragon Door)","Thorian Door","Way of Life (Covenant)","Blades Of World (Covenant)","Fractured Realm","Tundra Door",},
+    Callback = function(Value)
+        if Value == "Caldera" then
+            local Vector3End = Vector3.new(-221.396332, 46.5463257, -3328.51367)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Ruins/Sand Town" then
+            local Vector3End = Vector3.new(-2405.2, 42.8, -2977.7)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Way of Life (Covenant)" then
+            local Vector3End = Vector3.new(2612.2, 354.0, -3293.0)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+           elseif Value == "Blades Of World (Covenant)" then
+            local Vector3End = Vector3.new(-2830.5, -35.4, -2118.4)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Fractured Realm" then
+            local Vector3End = Vector3.new(160.5, 232.1, 1192.0)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Volcano (Dragon Door)" then
+            local Vector3End = Vector3.new(-4768, 51, -3424)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Tundra Door" then
+            local Vector3End = Vector3.new(-17, 293, -5999)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Level Up Room" then
+            local Vector3End = Vector3.new(789, 235, 2121)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Thorian Door" then
+            local Vector3End = Vector3.new(2235, 24, -373)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        end
+    end
+})
+
+Telepor:AddDropdown({
+    Name = "Misc",
+    Default = "",
+    Options = {"Floppa (Thanasius)", "BlackSmith", "Mark Npc","Sería(alchemist)","Merchant(Item Seller)","Atalar(Shard Fusioner)","Doctor(westwood)","The SoulMaster","Floppa Doctor"},
+    Callback = function(Value)
+    if Value == "BlackSmith" then
+        local Vector3End = Vector3.new(2633.7, 386.4, -3687.0)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Mark Npc" then
+        local Vector3End = Vector3.new(-67.9, 42.9, -3280.7)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Sería(alchemist)" then
+        local Vector3End = Vector3.new(2585.1, 386.3, -4027.0)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Merchant(Item Seller)" then
+        local Vector3End = Vector3.new(-147.9, 43.5, -3449.0)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Atalar(Shard Fusioner) " then
+        local Vector3End = Vector3.new(-367, 44, -3385)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+
+    elseif Value == "Doctor(westwood)" then
+        local Vector3End = Vector3.new(2518.4, 386.3, -3625.0)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Floppa Doctor" then
+        local Vector3End = Vector3.new(-1838.1, 47.5, -3187.6)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Floppa (Thanasius)" then
+        local Vector3End = Vector3.new(1695, 12, -1654)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    end
+end  
+})
+
+
+Telepor:AddDropdown({
+    Name = "Enchants",
+    Default = "",
+    Options = { "Inferno Enchant Trigger", "Inferno Enchant End","Reaper Enchant","Midas Enchant","Lifesong Enchant","Cursed Enchant",},
+    Callback = function(Value)
+        if Value == "Inferno Enchant Trigger" then
+            local Vector3End = Vector3.new(-4344, 74, -2090)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Inferno Enchant End" then
+            local Vector3End = Vector3.new(-4340, 67, -1587)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Reaper Enchant" then
+            local Vector3End = Vector3.new(-2402, 47,-3718)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Midas Enchant" then
+            local Vector3End = Vector3.new(-293, 44, -3176)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Cursed Enchant" then
+            local Vector3End = Vector3.new(1651, 54, -3480)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Lifesong Enchant" then
+            local Vector3End = Vector3.new(  5988, 53, -3467)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+
+        end
+    end
+    })
+    -- Base Class Trainer
+    Telepor:AddDropdown({
+        Name = "Base Class Trainer",
+        Default = "",
+        Options = { "Ysa(Warrior)", "Tivek (Spear)","Boots(Thief)","Arandor(Wizzard)","Doran(Martial Artist)"},
+        Callback = function(Value)  
+        if Value == "Doran(Martial Artist)" then
+            local Vector3End = Vector3.new(483, 117, -2653)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                    tween:Play()
+            elseif Value == "Arandor(Wizzard)" then
+                local Vector3End = Vector3.new(593.8, 124.1, -3608.0)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            elseif Value == "Tivek (Spear)" then
+                local Vector3End = Vector3.new(657.7, 97.2, -3984.5)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            elseif Value == "Ysa(Warrior)" then
+                local Vector3End = Vector3.new(-472.4, 42.9, -3283.1)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            elseif Value == "Boots(Thief)" then
+                local Vector3End = Vector3.new(-423.1, 42.9, -3529.1)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            end
+        end
+    })
+-- Super class chaotic
+Telepor:AddDropdown({
+    Name = "Super Class Trainer (Chaotic)",
+    Default = "",
+    Options = { "DarkFist Trainer","Berserker Trainer","Ulys(Necromancer)","Orín(Impaler)","Inette(Assasin)"},
+    Callback = function(Value)  
+    if Value == "DarkFist Trainer" then
+        local Vector3End = Vector3.new(1955.6, 32.3, -1420.0)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Berserker Trainer" then
+            local Vector3End = Vector3.new(5349.8, -91.3, -3255.6)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()    
+        elseif Value == "Ulys(Necromancer)" then
+            local Vector3End = Vector3.new(5950.9, 53.8, -2858.0)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Orín(Impaler)" then
+            local Vector3End = Vector3.new(2319.5, 385.7, -3622.0)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Inette(Assasin)" then
+            local Vector3End = Vector3.new(1181.3, -7.5, -2311.1)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+        end
+    end
+    })
+-- Super Class Trainer (Oderly)
+    Telepor:AddDropdown({
+    Name = "Super Class Trainer (Oderly)",
+    Default = "",
+    Options = {"Paladin Trainer","Luther(Monk)",
+    "Fernain(Saint)","Landrum(Elementalist)","Orkin(Ranger)"},
+    Callback = function(Value)
+    if Value == "Paladin Trainer" then
+        local Vector3End = Vector3.new(-2515.8, 43.1, -2958.2)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+
+
+    elseif Value == "Luther(Monk)" then
+        local Vector3End = Vector3.new( -1693.2, 114.9, -2942.3)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+
+
+    elseif Value == "Fernain(Saint)" then
+        local Vector3End = Vector3.new(-2663.9, 121.9, -3432.0)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+
+    elseif Value == "Landrum(Elementalist)" then
+        local Vector3End = Vector3.new(-2572.7, 42.7, -2485.6)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Orkin(Ranger)" then
+        local Vector3End = Vector3.new(2588.2, 386.3, -3175.8)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    elseif Value == "Thorin(Beastmaster)" then
+        local Vector3End = Vector3.new(-814.2, 61.9, -2473.2)
+        local Time = 0
+        local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+            TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+        tween:Play()
+    end
+end
+
+})
+-- Super Class Trainer (Neutral)
+Telepor:AddDropdown({
+    Name = "Super Class Trainer (Neutral)",
+    Default = "",
+    Options = {"Gren(Brawler)","Aberon(Rogue)","Relan(Lancer)","Leoran(Blade dancer)","Ophelia(Hexer)"},
+    Callback = function(Value)
+        if Value == "Gren(Brawler)" then
+             local Vector3End = Vector3.new(235.3, 98.6, -4652.1)
+             local Time = 0
+             local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                 TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+             tween:Play()
+            elseif Value == "Relan(Lancer)" then
+                local Vector3End = Vector3.new(-58.9, 159.1, -5605.8)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            elseif Value == "Aberon(Rogue)" then
+                local Vector3End = Vector3.new(-2505.9, 43.6, -2862.3)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            elseif Value == "Leoran(Blade dancer)" then
+                local Vector3End = Vector3.new(61.6, 113.5, -5364.3)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+            elseif Value == "Ophelia(Hexer)" then
+                local Vector3End = Vector3.new(-658.9, 42.7, -4196.1)
+                local Time = 0
+                local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                    TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+                tween:Play()
+        end
+    end
+
+})
+Telepor:AddDropdown({
+    Name = "Mark Portals",
+    Default = "",
+    Options = { "Venia Orb 1", "Venia Orb 2","Venia Orb 3","Venia Orb 4"},
+    Callback = function(Value)
+        if Value == "Venia Orb 1" then
+            local Vector3End = Vector3.new(-3174, -45, -2428)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Venia Orb 2" then
+            local Vector3End = Vector3.new(1709, 35, -2825)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Venia Orb 3" then
+            local Vector3End = Vector3.new(463, 138, -2683)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        elseif Value == "Venia Orb 4" then
+            local Vector3End = Vector3.new(-46, 293, -5944)
+            local Time = 0
+            local tween = game:GetService("TweenService"):Create(lp.Character.HumanoidRootPart,
+                TweenInfo.new(Time), { CFrame = CFrame.new(Vector3End) })
+            tween:Play()
+        end
+    end
+ })
+--Gui
+local Dupe = Window:MakeTab({
+    Name = "Dupe",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+--Dupe 
+local enabled = false
+local remote = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Data"):WaitForChild("UpdateHotbar")
+
+Dupe:AddToggle({
+    Name = "Enable Rollback",
+    Default = false,
+    Callback = function(state)
+        enabled = state
+        if enabled then
+            coroutine.wrap(function()
+                while enabled do
+                    task.wait()
+                    FireServer(remote, {[255] = "\255"})
+                    FireServer(remote, {[2] = "\255"})
+                    print("Rollback Setup")
+                end
+            end)()
+        end
+    end
+})
+
+-- Item Dropdown
+local itemListDropdown = Dupe:AddDropdown({
+    Name = "Items To Drop",
+    Default = "",
+    Options = GetUniqueToolNames(),
+    Callback = function(Value)
+        if variables.ToDrop[Value] then
+            variables.ToDrop[Value] = nil
+        else
+            variables.ToDrop[Value] = Value
+        end
+    end
+})
+
+-- Refresh Button
+local refreshButton = Dupe:AddButton({
+    Name = "Refresh",
+    Callback = function()
+        itemListDropdown:Refresh(GetUniqueToolNames(), itemListDropdown.Value)
+    end
+})
+
+-- Drop item
+local currentItem = ""
+Dupe:AddToggle({
+    Name = "Drop Item",
+    Default = false,
+    Callback = function(Value)
+        variables["DropToggle"] = Value
+        if variables["DropToggle"] then
+            currentItem = itemListDropdown.Value
+            coroutine.wrap(function()
+                while variables["DropToggle"] do
+                    task.wait()
+                    if currentItem ~= itemListDropdown.Value then
+                        currentItem = itemListDropdown.Value
+                    end
+                    if currentItem ~= "" then
+                        inventoryRemote:FireServer("Drop", currentItem)
+                    end
+                end
+            end)()
+        end
+    end
+})
+--Rejoin 
+Dupe:AddButton({
+    Name = "Rejoin",
+    Callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId,game:GetService("Players").LocalPlayer)
+    end
+})
+local Floppa = false -- Initialize Floppa flag
+Dupe:AddToggle({
+    Name = "Drop All Inventory",
+    Flag = "Floppa",
+    Callback = function(Value)
+        Floppa = Value
+        while Floppa do
+            task.wait()
+            for _, item in ipairs(GetUniqueToolNames()) do
+                inventoryRemote:FireServer("Drop", item)
+            end
+        end
+    end
+})
+OrionLib:Init()
+
+--Gui
+
+local Credits = Window:MakeTab({
+    Name = "Credits",
+    Icon = "rbxassetid://7733765398",
+    PremiumOnly = false
+})
+Credits:AddParagraph("Floppa | xalix2267","Owner of The Script and Developer")
+Credits:AddParagraph("Mz | Mz#4822","Contributor and Developer of The Script")
+Credits:AddParagraph("Unknow | IamNotUnknow#1003","Developer of The Script")
+Credits:AddParagraph("Geo | Elgeo#2223","Tester of The Script")
+Credits:AddParagraph("OneFool","Ui Modified")
+Credits:AddParagraph("You","For Using my Script ❤")
+
+OrionLib:Init()
